@@ -9,7 +9,7 @@ export const PROFILE_DATA = {
   email: "mohanouri68@gmail.com",
   github: "https://github.com/nouri-mohammed-islam",
   linkedin: "https://linkedin.com/in/nouri-mohammed-islam",
-  twitter: "https://twitter.com/nouri_islam_ai",
+  twitter: "https://x.com/Nouri_mohaa",
   location: "Available for Global & Remote Roles",
   // Default high-quality AI Engineer portrait placeholder (can be customized or uploaded in UI)
   defaultPicture: "/images/nouri.jpg",
