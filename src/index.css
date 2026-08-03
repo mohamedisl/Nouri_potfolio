@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #050505;
+    color: #ffffff;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Custom Modal Vertical Scrollbar for smooth & lag-free scrolling */
+.custom-modal-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 9999px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+[data-theme="light"] .custom-modal-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+[data-theme="light"] .custom-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+
+[data-theme="light"] .custom-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Light Mode PDF Canvas Background */
+[data-theme="light"] .pdf-canvas-bg {
+  background-color: #e2e8f0 !important;
+}
+
+/* Modal Overlay Styling for Light Mode */
+[data-theme="light"] .modal-overlay-bg {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Sleek Interface selection */
+::selection {
+  background: #3b82f6;
+  color: #050505;
+}
+
+/* Glowing animation for sleek blue accents */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px rgba(59, 130, 246, 0.3), 0 0 15px -8px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px -2px rgba(59, 130, 246, 0.5), 0 0 25px -4px rgba(96, 165, 250, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 4s infinite ease-in-out;
+}
+
+/* =========================================================
+   LIGHT & WHITE THEME MODE STYLES
+========================================================= */
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Background Overrides for Light Mode */
+[data-theme="light"] .bg-\[\#050505\],
+[data-theme="light"] .bg-\[\#0a0a0a\] {
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] .bg-\[\#0a0a0a\]\/90,
+[data-theme="light"] .bg-\[\#0a0a0a\]\/95,
+[data-theme="light"] .bg-\[\#050505\]\/80,
+[data-theme="light"] .bg-\[\#050505\]\/85 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+[data-theme="light"] .bg-zinc-900,
+[data-theme="light"] .bg-zinc-950 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 1px 3px -1px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .bg-zinc-900\/40,
+[data-theme="light"] .bg-zinc-900\/50,
+[data-theme="light"] .bg-zinc-900\/60,
+[data-theme="light"] .bg-zinc-900\/70,
+[data-theme="light"] .bg-zinc-900\/80,
+[data-theme="light"] .bg-zinc-900\/85,
+[data-theme="light"] .bg-zinc-900\/90,
+[data-theme="light"] .bg-zinc-900\/95,
+[data-theme="light"] .bg-zinc-950\/40,
+[data-theme="light"] .bg-zinc-950\/50,
+[data-theme="light"] .bg-zinc-950\/60,
+[data-theme="light"] .bg-zinc-950\/70,
+[data-theme="light"] .bg-zinc-950\/80,
+[data-theme="light"] .bg-zinc-950\/85,
+[data-theme="light"] .bg-zinc-950\/90,
+[data-theme="light"] .bg-zinc-950\/95,
+[data-theme="light"] .bg-black\/50,
+[data-theme="light"] .bg-black\/60,
+[data-theme="light"] .bg-black\/70,
+[data-theme="light"] .bg-black\/80,
+[data-theme="light"] .bg-black\/90 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .bg-zinc-800,
+[data-theme="light"] .bg-zinc-800\/20,
+[data-theme="light"] .bg-zinc-800\/30,
+[data-theme="light"] .bg-zinc-800\/40,
+[data-theme="light"] .bg-zinc-800\/50,
+[data-theme="light"] .bg-zinc-800\/60,
+[data-theme="light"] .bg-zinc-800\/70,
+[data-theme="light"] .bg-zinc-800\/80,
+[data-theme="light"] .bg-zinc-800\/90 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Border Overrides for Light Mode */
+[data-theme="light"] .border-zinc-800,
+[data-theme="light"] .border-zinc-800\/80,
+[data-theme="light"] .border-zinc-800\/60,
+[data-theme="light"] .border-zinc-800\/50 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .border-zinc-700,
+[data-theme="light"] .border-zinc-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Text Overrides for Light Mode */
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+/* Preserve White Text inside Primary Action Buttons */
+[data-theme="light"] .bg-blue-600.text-white,
+[data-theme="light"] .bg-blue-600 .text-white,
+[data-theme="light"] button.bg-blue-600,
+[data-theme="light"] .bg-emerald-600.text-white {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .text-zinc-200,
+[data-theme="light"] .text-zinc-300 {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .text-zinc-400 {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .text-zinc-500 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-zinc-600 {
+  color: #94a3b8 !important;
+}
+
+/* Hover State Overrides for Light Mode */
+[data-theme="light"] .hover\:text-white:hover,
+[data-theme="light"] .group:hover .group-hover\:text-white,
+[data-theme="light"] .hover\:text-zinc-100:hover,
+[data-theme="light"] .group:hover .group-hover\:text-zinc-100,
+[data-theme="light"] .hover\:text-zinc-200:hover,
+[data-theme="light"] .group:hover .group-hover\:text-zinc-200 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hover\:text-zinc-300:hover,
+[data-theme="light"] .group:hover .group-hover\:text-zinc-300 {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .hover\:text-zinc-400:hover,
+[data-theme="light"] .group:hover .group-hover\:text-zinc-400 {
+  color: #334155 !important;
+}
+
+/* Accent Blue Hover States in Light Mode */
+[data-theme="light"] .hover\:text-blue-400:hover,
+[data-theme="light"] .group:hover .group-hover\:text-blue-400,
+[data-theme="light"] .hover\:text-blue-300:hover,
+[data-theme="light"] .group:hover .group-hover\:text-blue-300,
+[data-theme="light"] .hover\:text-blue-500:hover,
+[data-theme="light"] .group:hover .group-hover\:text-blue-500 {
+  color: #1d4ed8 !important;
+}
+
+/* Background Hover Overrides in Light Mode */
+[data-theme="light"] .hover\:bg-zinc-900:hover,
+[data-theme="light"] .group:hover .group-hover\:bg-zinc-900,
+[data-theme="light"] .hover\:bg-zinc-950:hover,
+[data-theme="light"] .group:hover .group-hover\:bg-zinc-950 {
+  background-color: #f1f5f9 !important;
+}
+
+[data-theme="light"] .hover\:bg-zinc-800:hover,
+[data-theme="light"] .group:hover .group-hover\:bg-zinc-800,
+[data-theme="light"] .hover\:bg-zinc-800\/80:hover,
+[data-theme="light"] .hover\:bg-zinc-800\/60:hover {
+  background-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .hover\:bg-zinc-700:hover,
+[data-theme="light"] .group:hover .group-hover\:bg-zinc-700 {
+  background-color: #cbd5e1 !important;
+}
+
+/* Border Hover Overrides in Light Mode */
+[data-theme="light"] .hover\:border-zinc-700:hover,
+[data-theme="light"] .group:hover .group-hover\:border-zinc-700,
+[data-theme="light"] .hover\:border-zinc-700\/80:hover {
+  border-color: #94a3b8 !important;
+}
+
+[data-theme="light"] .hover\:border-zinc-600:hover,
+[data-theme="light"] .group:hover .group-hover\:border-zinc-600 {
+  border-color: #64748b !important;
+}
+
+[data-theme="light"] .hover\:border-blue-500:hover,
+[data-theme="light"] .group:hover .group-hover\:border-blue-500,
+[data-theme="light"] .hover\:border-blue-500\/40:hover,
+[data-theme="light"] .hover\:border-blue-500\/50:hover {
+  border-color: #2563eb !important;
+}
+
+/* Preserve White Text on Primary Buttons / Badges in Light Mode */
+[data-theme="light"] .bg-blue-600,
+[data-theme="light"] .bg-blue-600:hover,
+[data-theme="light"] .bg-blue-500:hover,
+[data-theme="light"] .bg-blue-600 .text-white,
+[data-theme="light"] .bg-blue-600:hover .text-white,
+[data-theme="light"] .bg-blue-500:hover .text-white,
+[data-theme="light"] button.bg-blue-600,
+[data-theme="light"] button.bg-blue-600:hover,
+[data-theme="light"] a.bg-blue-600,
+[data-theme="light"] a.bg-blue-600:hover {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .bg-blue-600:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* Optimized Accent Contrasts for White/Light Mode */
+[data-theme="light"] .text-blue-400 {
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .text-emerald-400 {
+  color: #059669 !important;
+}
+
+[data-theme="light"] .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+
+[data-theme="light"] .text-amber-400 {
+  color: #d97706 !important;
+}
+
+
