@@ -12,7 +12,7 @@ export const PROFILE_DATA = {
   twitter: "https://twitter.com/nouri_islam_ai",
   location: "Available for Global & Remote Roles",
   // Default high-quality AI Engineer portrait placeholder (can be customized or uploaded in UI)
-  defaultPicture: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+  defaultPicture: "images/nouri.jpg",
   // Alternative avatars for quick preview testing in the UI
   presetPictures: [
     {
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Deep learning retinal lesion detection & classification pipeline with XAI',
     description: 'Designed an advanced deep learning pipeline for early retinal lesion detection and classification with Explainable AI (XAI) for clinical transparency and interpretability. Annotated high-resolution medical dataset using MakeSense to ensure high-quality ground truth.',
     category: 'ai',
-    image: 'assets/.aistudio/DR.png',
+    image: 'images/DR.png',
     tags: ['PyTorch', 'TensorFlow', 'XAI / Grad-CAM', 'CNN Architectures', 'Computer Vision', 'Medical Imaging'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/diabetic-retinopathy-xai',
     featured: true,
@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Real-time facial emotion recognition CNN trained on FER-2013',
     description: 'Built a real-time CNN-based facial emotion recognition system trained on the FER-2013 dataset using TensorFlow and Keras, capable of classifying 7 distinct human emotional states with live webcam feed processing.',
     category: 'ai',
-    image: 'assets/emotion.png',
+    image: 'images/emotion.png',
     tags: ['TensorFlow', 'Keras', 'OpenCV', 'CNN', 'FER-2013', 'Real-Time Vision'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/emotion-detection-cnn',
     featured: true,
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Your Gateway to the Right University Major',
     description: 'An intelligent platform that empowers new Baccalaureate graduates to explore university programs, compare specialties, and confidently choose the academic path that best matches their interests and career goals.',
     category: 'web',
-    image: 'assets/abwab2.png',
+    image: 'images/abwab2.png',
     tags: ['React', 'TypeScript', 'Tailwind CSS'],
     demoUrl: 'https://abwab-eight.vercel.app/',
     featured: true,
@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'ML risk profile prediction models for preventive healthcare decision support',
     description: 'An interactive healthcare decision support web application that applies supervised machine learning models to predict patient diabetes risk profiles based on diagnostic biomarkers, empowering preventive healthcare decision support.',
     category: 'ai',
-    image: 'assets/diabetes.png',
+    image: 'images/diabetes.png',
     tags: ['Python ML', 'React', 'Node.js', 'Scikit-Learn', 'Pandas & NumPy', 'Power BI'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/diabetes-prediction-system',
     demoUrl: 'https://github.com/nouri-mohammed-islam/diabetes-prediction-system',
