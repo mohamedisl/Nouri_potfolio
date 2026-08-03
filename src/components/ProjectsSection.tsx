@@ -38,8 +38,8 @@ export const ProjectsSection: React.FC = () => {
   const filterTabs = [
     { id: 'all', label: 'All Projects', count: PROJECTS.length },
     { id: 'hybrid', label: 'Hybrid AI + Web', count: PROJECTS.filter(p => p.category === 'hybrid').length },
-    { id: 'ai', label: 'AI & Computer Vision', count: PROJECTS.filter(p => p.category === 'ai').length },
-    { id: 'web', label: 'Full-Stack & Data Dev', count: PROJECTS.filter(p => p.category === 'web').length },
+    { id: 'ai', label: 'AI ', count: PROJECTS.filter(p => p.category === 'ai').length },
+    { id: 'web', label: 'Web', count: PROJECTS.filter(p => p.category === 'web').length },
   ] as const;
 
   const filteredProjects = PROJECTS.filter((proj) => {
@@ -68,9 +68,6 @@ export const ProjectsSection: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               Featured Projects
             </h2>
-            <p className="text-base text-zinc-400 mt-3">
-              Production-ready applications combining custom AI reasoning engines with high-performance React frontends.
-            </p>
           </div>
 
           {/* Filter Pills */}

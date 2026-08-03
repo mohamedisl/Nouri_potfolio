@@ -3,10 +3,10 @@ import { SkillCategory, Project, TimelineItem, AIQuestionAnswer } from '../types
 export const PROFILE_DATA = {
   fullName: "NOURI Mohammed Islam",
   displayName: "Mohammed Islam NOURI",
-  role: "Computer Engineer – IT Systems, Networks & AI",
+  role: "AI Engineer – IT Systems, Web Developer",
   tagline: "Computer Engineering specialization in Deep Learning, Computer Vision, Cisco Networking, and Full-Stack MERN Development.",
   bio: "AI Engineer, Data Analyst, Computer Vision, and Full-Stack Developer with a strong background in Machine Learning, Deep Learning, and Software Engineering. Experienced in analyzing and transforming data into actionable insights using Python, SQL, and data visualization, while also building intelligent vision systems and AI-powered web applications with PyTorch, TensorFlow, OpenCV, YOLO, React, Node.js, and MongoDB Passionate about solving real-world problems through data and AI, with a particular interest in medical AI, computer vision, and scalable software development. Always eager to collaborate on innovative projects, leverage data-driven decision-making, and contribute to advancing Artificial Intelligence.",
-  email: "mohanouri68@gmail.com",
+  email: "nouri.mohammed.islam@gmail.com",
   github: "https://github.com/nouri-mohammed-islam",
   linkedin: "https://linkedin.com/in/nouri-mohammed-islam",
   twitter: "https://x.com/Nouri_mohaa",

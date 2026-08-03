@@ -346,7 +346,7 @@ export const Hero: React.FC<HeroProps> = ({
               </p>
 
               <p className="text-sm text-zinc-400 pt-1">
-                <strong className="text-zinc-200">Honors &amp; Focus:</strong> • Deep Learning &amp; Computer Vision
+                <strong className="text-zinc-200">Honors &amp; Focus:</strong> • Deep Learning , Computer Vision , Machine Learning &amp; Web development
               </p>
             </div>
 
