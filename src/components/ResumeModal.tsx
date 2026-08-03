@@ -13,10 +13,80 @@ import {
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { PROFILE_DATA } from '../data/portfolioData';
 
 interface ResumeModalProps {
   isOpen: boolean;
   onClose: () => void;
+}
+
+function oklchToRgb(oklchStr: string): string {
+  try {
+    const cleaned = oklchStr.trim();
+    const match = cleaned.match(/oklch\(\s*([^\s,/]+)[\s,]+([^\s,/]+)[\s,]+([^\s,/)]+)(?:[\s,/]+([^\s,/)]+))?\s*\)/i);
+    if (!match) return 'rgb(0, 0, 0)';
+
+    let lStr = match[1];
+    let cStr = match[2];
+    let hStr = match[3];
+    let aStr = match[4];
+
+    if (lStr === 'none') lStr = '0';
+    if (cStr === 'none') cStr = '0';
+    if (hStr === 'none') hStr = '0';
+
+    let l = parseFloat(lStr);
+    if (lStr.endsWith('%')) l /= 100;
+
+    let c = parseFloat(cStr);
+    let h = parseFloat(hStr);
+
+    let a = 1;
+    if (aStr && aStr !== 'none') {
+      a = parseFloat(aStr);
+      if (aStr.endsWith('%')) a /= 100;
+    }
+
+    if (isNaN(l)) l = 0;
+    if (isNaN(c)) c = 0;
+    if (isNaN(h)) h = 0;
+
+    // Convert OKLCH to OKLAB
+    const hRad = (h * Math.PI) / 180;
+    const aLab = c * Math.cos(hRad);
+    const bLab = c * Math.sin(hRad);
+
+    // Convert OKLAB to linear RGB
+    const l_ = l + 0.3963377774 * aLab + 0.2158037573 * bLab;
+    const m_ = l - 0.1055613458 * aLab - 0.0638541728 * bLab;
+    const s_ = l - 0.0894841775 * aLab - 1.2914855480 * bLab;
+
+    const l3 = l_ * l_ * l_;
+    const m3 = m_ * m_ * m_;
+    const s3 = s_ * s_ * s_;
+
+    let rLinear = +4.0767416621 * l3 - 3.3077115913 * m3 + 0.2309699292 * s3;
+    let gLinear = -1.2684380046 * l3 + 2.6097574011 * m3 - 0.3413193965 * s3;
+    let bLinear = -0.0041960863 * l3 - 0.7034186147 * m3 + 1.7076147010 * s3;
+
+    const toSRGB = (val: number) => {
+      const clamped = Math.max(0, Math.min(1, val));
+      return clamped <= 0.0031308
+        ? Math.round(clamped * 12.92 * 255)
+        : Math.round((1.055 * Math.pow(clamped, 1 / 2.4) - 0.055) * 255);
+    };
+
+    const r = toSRGB(rLinear);
+    const g = toSRGB(gLinear);
+    const b = toSRGB(bLinear);
+
+    if (a < 1) {
+      return `rgba(${r}, ${g}, ${b}, ${a})`;
+    }
+    return `rgb(${r}, ${g}, ${b})`;
+  } catch {
+    return 'rgb(0, 0, 0)';
+  }
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
@@ -51,12 +121,50 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
 
+      const processClonedDoc = (clonedDoc: Document) => {
+        // Replace oklch in <style> elements
+        const styleEls = clonedDoc.querySelectorAll('style');
+        styleEls.forEach((style) => {
+          if (style.textContent && style.textContent.includes('oklch')) {
+            style.textContent = style.textContent.replace(/oklch\([^)]+\)/gi, (m) => oklchToRgb(m));
+          }
+        });
+
+        // Replace oklch in inline styles and computed styles
+        const allElements = clonedDoc.querySelectorAll<HTMLElement>('*');
+        allElements.forEach((el) => {
+          const styleAttr = el.getAttribute('style');
+          if (styleAttr && styleAttr.includes('oklch')) {
+            el.setAttribute('style', styleAttr.replace(/oklch\([^)]+\)/gi, (m) => oklchToRgb(m)));
+          }
+          try {
+            const comp = clonedDoc.defaultView?.getComputedStyle(el);
+            if (comp) {
+              if (comp.color && comp.color.includes('oklch')) {
+                el.style.color = oklchToRgb(comp.color);
+              }
+              if (comp.backgroundColor && comp.backgroundColor.includes('oklch')) {
+                el.style.backgroundColor = oklchToRgb(comp.backgroundColor);
+              }
+              if (comp.borderColor && comp.borderColor.includes('oklch')) {
+                el.style.borderColor = oklchToRgb(comp.borderColor);
+              }
+            }
+          } catch {
+            // ignore
+          }
+        });
+      };
+
       // Render Page 1
       const canvas1 = await html2canvas(page1Ref.current, {
         scale: 2,
         useCORS: true,
         backgroundColor: '#ffffff',
         logging: false,
+        onclone: (clonedDoc) => {
+          processClonedDoc(clonedDoc);
+        },
       });
       const imgData1 = canvas1.toDataURL('image/jpeg', 0.98);
       pdf.addImage(imgData1, 'JPEG', 0, 0, pdfWidth, pdfHeight);
@@ -68,6 +176,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         useCORS: true,
         backgroundColor: '#ffffff',
         logging: false,
+        onclone: (clonedDoc) => {
+          processClonedDoc(clonedDoc);
+        },
       });
       const imgData2 = canvas2.toDataURL('image/jpeg', 0.98);
       pdf.addImage(imgData2, 'JPEG', 0, 0, pdfWidth, pdfHeight);
@@ -178,25 +289,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               <span>Print</span>
             </button>
 
-            <button
-              onClick={handleDownloadPDF}
-              disabled={downloading}
-              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-75 text-white text-xs font-mono font-semibold transition-colors border border-blue-500/50 shadow-lg shadow-blue-600/20"
+            <a
+              href={PROFILE_DATA.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-semibold transition-colors border border-blue-500/50 shadow-lg shadow-blue-600/20"
+              title="Download / View CV in Google Drive"
             >
-              {downloading ? (
-                <>
-                  <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-spin" />
-                  <span className="hidden sm:inline">Generating...</span>
-                  <span className="sm:hidden text-[11px]">PDF...</span>
-                </>
-              ) : (
-                <>
-                  <FileDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span className="hidden sm:inline">Download PDF</span>
-                  <span className="sm:hidden text-[11px]">Download</span>
-                </>
-              )}
-            </button>
+              <FileDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Download PDF</span>
+              <span className="sm:hidden text-[11px]">Download</span>
+              <ExternalLink className="w-3 h-3 opacity-80" />
+            </a>
 
             <button
               onClick={onClose}

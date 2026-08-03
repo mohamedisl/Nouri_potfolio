@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Menu, X, Sun, Moon } from 'lucide-react';
+import { FileText, Menu, X, Sun, Moon, ExternalLink } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { PROFILE_DATA } from '../data/portfolioData';
 
 interface NavbarProps {
   activeSection: string;
@@ -97,13 +98,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
-            <button
-              onClick={onOpenResume}
+            <a
+              href={PROFILE_DATA.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-sm"
+              title="Download / View CV in Google Drive"
             >
               <FileText className="w-3.5 h-3.5" />
               <span>CV / Resume</span>
-            </button>
+              <ExternalLink className="w-3 h-3 opacity-70" />
+            </a>
           </div>
 
           {/* Mobile menu trigger */}
@@ -172,16 +177,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                   )}
                 </button>
 
-                <button
-                  onClick={() => {
-                    onOpenResume();
-                    setMobileMenuOpen(false);
-                  }}
+                <a
+                  href={PROFILE_DATA.resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-300 border border-zinc-800"
                 >
                   <FileText className="w-4 h-4 text-zinc-400" />
                   <span>View CV / Resume</span>
-                </button>
+                  <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
+                </a>
               </div>
             </div>
           </div>

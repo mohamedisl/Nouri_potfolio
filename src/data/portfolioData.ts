@@ -11,6 +11,7 @@ export const PROFILE_DATA = {
   linkedin: "https://linkedin.com/in/nouri-mohammed-islam",
   twitter: "https://x.com/Nouri_mohaa",
   location: "Available for Global & Remote Roles",
+  resumeUrl: "https://drive.google.com/file/d/1TTXQUa7FCxZENm3nk1PUDvDUt3j7B1x2/view?usp=sharing",
   // Default high-quality AI Engineer portrait placeholder (can be customized or uploaded in UI)
   defaultPicture: "/images/nouri.jpg",
   // Alternative avatars for quick preview testing in the UI

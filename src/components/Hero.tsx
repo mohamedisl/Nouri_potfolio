@@ -235,13 +235,17 @@ export const Hero: React.FC<HeroProps> = ({
                 <Mail className="w-4 h-4 text-blue-400" />
                 <span>Contact Me</span>
               </button>
-
-              <button
-                onClick={onOpenResume}
-                className="inline-flex items-center justify-center px-5 py-3 rounded-lg font-medium text-sm text-zinc-400 hover:text-white transition-all"
+              <a
+                href={PROFILE_DATA.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-lg font-medium text-sm text-zinc-400 hover:text-white transition-all cursor-pointer"
+                title="Download / View CV in Google Drive"
               >
                 <span>View CV</span>
-              </button>
+
+              </a>
+             
             </div>
 
             {/* Social Links & Quick Contact */}
