@@ -5,14 +5,14 @@ export const PROFILE_DATA = {
   displayName: "Mohammed Islam NOURI",
   role: "Computer Engineer – IT Systems, Networks & AI",
   tagline: "Computer Engineering specialization in Deep Learning, Computer Vision, Cisco Networking, and Full-Stack MERN Development.",
-  bio: "Computer Engineer specializing in Artificial Intelligence, Computer Vision, and Industrial Networks. Combining medical AI image analysis (retinal lesion detection with XAI) and facial emotion recognition with hands-on Cisco networking, SIL-3 industrial safety systems, and full-stack MERN web platforms.",
+  bio: "AI Engineer, Data Analyst, Computer Vision, and Full-Stack Developer with a strong background in Machine Learning, Deep Learning, and Software Engineering. Experienced in analyzing and transforming data into actionable insights using Python, SQL, and data visualization, while also building intelligent vision systems and AI-powered web applications with PyTorch, TensorFlow, OpenCV, YOLO, React, Node.js, and MongoDB Passionate about solving real-world problems through data and AI, with a particular interest in medical AI, computer vision, and scalable software development. Always eager to collaborate on innovative projects, leverage data-driven decision-making, and contribute to advancing Artificial Intelligence.",
   email: "mohanouri68@gmail.com",
   github: "https://github.com/nouri-mohammed-islam",
   linkedin: "https://linkedin.com/in/nouri-mohammed-islam",
   twitter: "https://twitter.com/nouri_islam_ai",
   location: "Available for Global & Remote Roles",
   // Default high-quality AI Engineer portrait placeholder (can be customized or uploaded in UI)
-  defaultPicture: "images/nouri.jpg",
+  defaultPicture: "/images/nouri.jpg",
   // Alternative avatars for quick preview testing in the UI
   presetPictures: [
     {
@@ -55,22 +55,22 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Prompt Engineering', level: 'Advanced', category: 'ai' },
     ]
   },
-  {
-    id: 'web',
-    title: 'Networking & IT Systems',
-    badge: 'Infrastructure & Cisco',
-    description: 'Cisco configuration, SIL-3 industrial safety systems, data center infrastructure, and PLC programming.',
-    color: 'cyan',
-    iconName: 'Code2',
-    skills: [
-      { name: 'Cisco Switches & Configuration', level: 'Advanced', category: 'web' },
-      { name: 'Triconex SIL-3 Safety Systems', level: 'Advanced', category: 'web' },
-      { name: 'Fiber Optic & Network Troubleshooting', level: 'Advanced', category: 'web' },
-      { name: 'PLC Programming (TIA Portal)', level: 'Advanced', category: 'web' },
-      { name: 'Data Center Infrastructure', level: 'Advanced', category: 'web' },
-      { name: 'Embedded Systems Integration', level: 'Advanced', category: 'web' }
-    ]
-  },
+  // {
+  //   id: 'web',
+  //   title: 'Networking & IT Systems',
+  //   badge: 'Infrastructure & Cisco',
+  //   description: 'Cisco configuration, SIL-3 industrial safety systems, data center infrastructure, and PLC programming.',
+  //   color: 'cyan',
+  //   iconName: 'Code2',
+  //   skills: [
+  //     { name: 'Cisco Switches & Configuration', level: 'Advanced', category: 'web' },
+  //     { name: 'Triconex SIL-3 Safety Systems', level: 'Advanced', category: 'web' },
+  //     { name: 'Fiber Optic & Network Troubleshooting', level: 'Advanced', category: 'web' },
+  //     { name: 'PLC Programming (TIA Portal)', level: 'Advanced', category: 'web' },
+  //     { name: 'Data Center Infrastructure', level: 'Advanced', category: 'web' },
+  //     { name: 'Embedded Systems Integration', level: 'Advanced', category: 'web' }
+  //   ]
+  // },
   {
     id: 'tools',
     title: 'Programming, Web & Data',
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Deep learning retinal lesion detection & classification pipeline with XAI',
     description: 'Designed an advanced deep learning pipeline for early retinal lesion detection and classification with Explainable AI (XAI) for clinical transparency and interpretability. Annotated high-resolution medical dataset using MakeSense to ensure high-quality ground truth.',
     category: 'ai',
-    image: 'images/DR.png',
+    image: '/images/DR.png',
     tags: ['PyTorch', 'TensorFlow', 'XAI / Grad-CAM', 'CNN Architectures', 'Computer Vision', 'Medical Imaging'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/diabetic-retinopathy-xai',
     featured: true,
@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Real-time facial emotion recognition CNN trained on FER-2013',
     description: 'Built a real-time CNN-based facial emotion recognition system trained on the FER-2013 dataset using TensorFlow and Keras, capable of classifying 7 distinct human emotional states with live webcam feed processing.',
     category: 'ai',
-    image: 'images/emotion.png',
+    image: '/images/emotion.png',
     tags: ['TensorFlow', 'Keras', 'OpenCV', 'CNN', 'FER-2013', 'Real-Time Vision'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/emotion-detection-cnn',
     featured: true,
@@ -157,7 +157,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'AI recommendation engine matching volunteers to NGOs by skills & location',
     description: 'Implemented an intelligent volunteering web platform powered by an AI recommendation engine that matches volunteers to non-governmental organizations (NGOs) based on skill compatibility, geolocation, and mission preferences.',
     category: 'hybrid',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/tawa3.png',
     tags: ['MERN Stack', 'AI Recommendation Engine', 'React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/volontech-platform',
     demoUrl: 'https://volontech.example.com',
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Your Gateway to the Right University Major',
     description: 'An intelligent platform that empowers new Baccalaureate graduates to explore university programs, compare specialties, and confidently choose the academic path that best matches their interests and career goals.',
     category: 'web',
-    image: 'images/abwab2.png',
+    image: '/images/abwab2.png',
     tags: ['React', 'TypeScript', 'Tailwind CSS'],
     demoUrl: 'https://abwab-eight.vercel.app/',
     featured: true,
@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'ML risk profile prediction models for preventive healthcare decision support',
     description: 'An interactive healthcare decision support web application that applies supervised machine learning models to predict patient diabetes risk profiles based on diagnostic biomarkers, empowering preventive healthcare decision support.',
     category: 'ai',
-    image: 'images/diabetes.png',
+    image: '/images/diabetes.png',
     tags: ['Python ML', 'React', 'Node.js', 'Scikit-Learn', 'Pandas & NumPy', 'Power BI'],
     githubUrl: 'https://github.com/nouri-mohammed-islam/diabetes-prediction-system',
     demoUrl: 'https://github.com/nouri-mohammed-islam/diabetes-prediction-system',

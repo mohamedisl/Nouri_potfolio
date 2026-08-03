@@ -214,7 +214,8 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Bio paragraph */}
             <p className="text-base sm:text-lg text-zinc-400 max-w-xl leading-relaxed mb-8">
-              Specializing in <span className="text-zinc-200 font-medium">Deep Learning</span>, <span className="text-zinc-200 font-medium">Computer Vision</span> (Retinal Lesion Detection &amp; XAI), and <span className="text-zinc-200 font-medium">Industrial Networks</span> (Cisco, SIL-3 safety systems, and full-stack MERN web apps).
+              AI Engineer, Data Analyst, Computer Vision, and Full-Stack Developer with a strong background in Machine Learning, Deep Learning, and Software Engineering. Experienced in analyzing and transforming data into actionable insights using Python, SQL, and data visualization, while also building intelligent vision systems and AI-powered web applications with PyTorch, TensorFlow, OpenCV, YOLO, React, Node.js, and MongoDB.
+              Passionate about solving real-world problems through data and AI, with a particular interest in medical AI, computer vision, and scalable software development. Always eager to collaborate on innovative projects, leverage data-driven decision-making, and contribute to advancing Artificial Intelligence..
             </p>
 
             {/* CTA Buttons */}
