@@ -5,10 +5,10 @@ export const PROFILE_DATA = {
   displayName: "Mohammed Islam NOURI",
   role: "AI Engineer – IT Systems, Web Developer",
   tagline: "Computer Engineering specialization in Deep Learning, Computer Vision, Cisco Networking, and Full-Stack MERN Development.",
-  bio: "AI Engineer, Data Analyst, Computer Vision, and Full-Stack Developer with a strong background in Machine Learning, Deep Learning, and Software Engineering. Experienced in analyzing and transforming data into actionable insights using Python, SQL, and data visualization, while also building intelligent vision systems and AI-powered web applications with PyTorch, TensorFlow, OpenCV, YOLO, React, Node.js, and MongoDB Passionate about solving real-world problems through data and AI, with a particular interest in medical AI, computer vision, and scalable software development. Always eager to collaborate on innovative projects, leverage data-driven decision-making, and contribute to advancing Artificial Intelligence.",
+  bio: "AI Engineer, Data Analyst, Computer Vision, and Full-Stack Developer with a strong background in Machine Learning, Deep Learning, and Software Engineering. Experienced in analyzing and transforming data into actionable insights using Python, SQL, and data visualization, while also building intelligent vision systems and AI-powered web applications with PyTorch, TensorFlow, OpenCV, YOLO, React, Node.js, and MongoDB Passionate about solving real-world problems through data and AI, with a particular interest in medical AI, and scalable software development. Always eager to collaborate on innovative projects, leverage data-driven decision-making, and contribute to advancing Artificial Intelligence.",
   email: "nouri.mohammed.islam@gmail.com",
   github: "https://github.com/nouri-mohammed-islam",
-  linkedin: "https://linkedin.com/in/nouri-mohammed-islam",
+  linkedin: "https://www.linkedin.com/in/mohammed-islam-nouri-536951297",
   twitter: "https://x.com/Nouri_mohaa",
   location: "Available for Global & Remote Roles",
   resumeUrl: "https://drive.google.com/file/d/1TTXQUa7FCxZENm3nk1PUDvDUt3j7B1x2/view?usp=sharing",
@@ -227,6 +227,38 @@ export const PROJECTS: Project[] = [
         'Translating complex probabilistic model outputs into intuitive clinical decision indicators.'
       ]
     }
+  },
+  {
+    id: 'daily_ needs',
+    title: ' daily needs',
+    subtitle: 'Calculate your daily calorie needs',
+    description: 'An intuitive web platform that calculates exact BMR and Total Daily Energy Expenditure (TDEE) using the Mifflin-St Jeor formula, delivering personalized daily calorie targets and macronutrient breakdowns in real time.',
+    category: 'web',
+    image: '/images/nutruition.png',
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    demoUrl: 'https://daily-needs-three.vercel.app/',
+    featured: true,
+    stats: [
+      { label: 'Matching Accuracy', value: '94.5%' },
+      { label: 'Response Time', value: '<80ms' },
+      { label: 'Platform Stack', value: 'React + TS' }
+    ]
+  },
+  {
+    id: 'NAVIGUI',
+    title: ' Navigui ',
+    subtitle: 'Recycle & Reuse Marketplace',
+    description: 'Navigui is an online C2C marketplace platform designed to simplify local trading. It allows users to easily list pre owned items for sale, browse and buy used goods, or directly exchange products with other community members',
+    category: 'web',
+    image: '/images/navigui.png',
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    demoUrl: 'https://navigui-sepia.vercel.app/',
+    featured: true,
+    stats: [
+      { label: 'Matching Accuracy', value: '94.5%' },
+      { label: 'Response Time', value: '<80ms' },
+      { label: 'Platform Stack', value: 'React + TS' }
+    ]
   }
 ];
 
